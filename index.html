@@ -24,8 +24,107 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+				<section><img data-src="monitorama.png"></section>
+				<section><h2>Just ... monitoring?</h2><img data-src="lebron.jpg"></section>
+				<section><h2>Monitorama factoids</h2><div align=left>
+					<p class="fragment">Single track conference</p>
+					<p class="fragment">Focused on open-source monitoring</p>
+					<p class="fragment">Started in 2013 by Jason Dixon (@obfuscurity)</p>
+					<p class="fragment">In Portland since 2014</p>
+					<p class="fragment">~600 attendees</p>
+					<p class="fragment">Very popular - 800 person waiting list this year</p>
+				</div></section>
+				<section><h2>Who presented?</h2>
+					<p class="fragment">Big companies (Twitter, Google, Uber)</p>
+					<p class="fragment">Unicorns (Slack, Yelp, Stripe, Buzzfeed)</p>
+					<p class="fragment">Small startups (MapBox, IOPipe, Sensu)</p>
+					<p class="fragment">Sponsors</p>
+					<p class="fragment">and an Academic (Stanford)</p>
+					<p class="fragment">Notably not: Microsoft, Oracle, IBM, VMWare</p>
+				</section>
+				<section><h2>Conference themes</h2>
+					<p>Serverless</p>
+					<p>Prometheus</p>
+					<p>Observability</p>
+					<p>Alert fatigue</p>
+					<p>Organizational challenges</p>
+				</section>
+				<section><h2>Serverless</h2>
+					<p class="fragment">AWS is the reference</p>
+					<p class="fragment">Tooling and paradigms not caught up</p>
+				</section>
+				<section><h2>Prometheus</h2>
+					<p class="fragment">Next-gen monitoring solution</p>
+					<p><span class="fragment">Monitoring</span><span class="fragment">, alerting</span><span class="fragment">, graphing</span><span class="fragment">, query language</span></p>
+					<p class="fragment">And it scales: compact, sharding, federation</p>
+					<p class="fragment">History: founded in 2012 by ex-Googlers, inspired by borgmon</p>
+					<p class="fragment">Open source, no single company driving</p>
+					<p class="fragment"><a href= https://prometheus.io>https://prometheus.io</a></p>
+				</section>
+				<section data-background-iframe="https://cncf.io/projects" data-background-interactive>
+				</section>
+				<section><h2>Observability</h2>
+					<p class="fragment">Movement started with <a href=https://blog.twitter.com/engineering/en_us/a/2013/observability-at-twitter.html>twitter blog post</a></p>
+					<p class="fragment">Monitoring: Known Unknowns</p>
+					<p class="fragment">Observability: Unknown Unknowns</p>
+					<p class="fragment">Remember <code>tail -f /var/log/messages</code>?</p>
+					<p class="fragment">How do you get that visibility into a distributed system</span></p>
+					<p><span class="fragment">Built on microservices?</span><span class="fragment"> Or serverless?</span></p>
+					<p class="fragment">Toolbox: metrics and logs and instrumentation and monitors and tracing, oh my</p>
+				</section>
+				<section><h2>Alert fatigue</h2>
+					<p class="fragment">Two talks referenced an <a href=https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4926996/>NIH study</a> of alarm fatigue in medical settings</p>
+					<p class="fragment">72-99% of alarms deemed insignificant</p>
+					<p class="fragment">"Important clinical events may be missed amid the cacophony"</p>
+					<p class="fragment">Alarm fatigue not just for squeaky wheel alarms</p>
+				</section>
+				<section><h2>Alert fatigue - approaches</h2>
+					<p class="fragment">Only alert on customer facing conditions</p>
+					<p class="fragment">Metrics on non-customer facing conditions are for observability, not alerting</p>
+					<p class="fragment">Schedule regular (quarterly) review of alerts</p>
+					<p class="fragment">Retire low ROI alerts</p>
+					<p class="fragment">Fewer alert sources takes work and discipline</p>
+				</section>
+				<section><h2>Organizational challenges - story time</h2>
+					<p class="fragment">The power of "no"</p>
+					<p class="fragment">Embedding per-team</p>
+					<p class="fragment">Treat like a product</p>
+				</section>
+				<section data-background="http://i.giphy.com/90F8aUepslB84.gif">
+					<h2>... oh and there were talks</h2>
+				</section>
+				<section><h2>Video Monitoring</h2>
+					<p class="fragment">"Next-Generation Observability for Next-Generation Data: Video, Sensors, Telemetry"</p>
+					<p class="fragment">Peter Bailis, @pbailis, Stanford CS prof</p>
+					<p class="fragment"><a href=https://dawn.cs.stanford.edu/>DAWN</a>: ML democratized (cheaper, easier)</p>
+					<p class="fragment">Exploiting locality<img data-src="taipei-label1.gif"></p>
+					<p class="fragment"><a href= https://github.com/stanford-futuredata/noscope>https://github.com/stanford-futuredata/noscope</a></p>
+				</section>
+				<section><h2>The present and future of serverless observability</h2>
+					<p class="fragment">Yan Cui, @theburningmonk, <a href=https://www.slideshare.net/theburningmonk/the-present-and-future-of-serverless-observability-100983842>slides</a></p>
+					<p class="fragment">Present: CloudWatch Logs. But not searchable so use ElasticSearch</p>
+					<p class="fragment">Present: XRay. But what about async ops or non-AWS services</p>
+					<p class="fragment">Present: Metrics. But data loss with lambdas expiring</p>
+					<p class="fragment">Future: Full traceability (async, non-AWS, etc)</p>
+					<p class="fragment">Future: Live graph of traffic, queryable as graph</p>
+				</section>
+				<section><h2>Optimizing for learning</h2>
+					<p class="fragment">Logan McDonald, @loganmeetsworld, Buzzfeed</p>
+					<p class="fragment"><a href=https://speakerdeck.com/loganmeetsworld/optimizing-for-learning?slide=1>slides</a>, <a href=https://twitter.com/loganmeetsworld/status/1003682794143268865>twitter thread</a> with loads of links</p>
+					<p class="fragment">Lessons from behavioral economics</p>
+					<p class="fragment">Low stakes testing</p>
+					<p class="fragment">Don't google it ... yet</p>
+					<p class="fragment">Leitner method: 3 buckets</p>
+					<p class="fragment">Good measure of observability: how quickly can someone onboard?</p>
+					<p class="fragment">Institutional knowledge and elephants</p>
+				</section>
+				<section><h2>Resources</h2>
+				<li><a href=http://monitorama.com/>Monitorama</a></li>
+				<li><a href=https://www.youtube.com/results?search_query=monitorama&page=&utm_source=opensearch>Monitorama videos</a></li>
+				<li><a href=https://gist.github.com/irabinovitch/9768289082f269a5174bee49a13f46ca>Gist with talk timecodes</a></li>
+				</section>
+				<section><h2>Questionorama</h2>
+				</section>
 			</div>
 		</div>
 
@@ -42,7 +141,8 @@
 					{ src: 'plugin/markdown/markdown.js' },
 					{ src: 'plugin/notes/notes.js', async: true },
 					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
-				]
+				],
+				progress: false
 			});
 		</script>
 	</body>
